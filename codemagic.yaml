@@ -1,12 +1,16 @@
 workflows:
   ios-workflow:
     name: iOS Workflow
+    instance_type: mac_mini_m1
     environment:
       flutter: stable
+
     scripts:
-      - name: Install dependencies
+      - name: Get packages
         script: flutter pub get
-      - name: Build iOS
-        script: flutter build ios --releasegit add codemagic.yaml
-  git commit -m "Add codemagic yaml"
-  git push origin master
+
+      - name: Build iOS (Flutter)
+        script: flutter build ios --release
+
+    artifacts:
+      - build/ios/ipa/*.ipa
