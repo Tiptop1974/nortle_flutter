@@ -41,7 +41,7 @@ class NortleLogo extends StatelessWidget {
             const SizedBox(height: 2),
             const Text(
               "NORTLE™",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.black, color: Color(0xFF1A1A1A), letterSpacing: 1),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Color(0xFF1A1A1A), letterSpacing: 1),
             ),
             const Text("v1.0", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.grey)),
             const Text("© 2026 Paul Tippet All Rights Reserved", style: TextStyle(fontSize: 8, color: Colors.grey)),
@@ -57,7 +57,7 @@ class NortleLogo extends StatelessWidget {
       height: 20,
       decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2)),
       alignment: Alignment.center,
-      child: Text(char, style: const TextStyle(fontWeight: FontWeight.black, color: Color(0xFF1A1A1A), fontSize: 12)),
+      child: Text(char, style: const TextStyle(fontWeight: FontWeight.w900, color: Color(0xFF1A1A1A), fontSize: 12)),
     );
   }
 }
@@ -216,14 +216,14 @@ class WordleKeyboard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: controller.countdownNumbers.take(3).map((num) => Expanded(child: Padding(padding: const EdgeInsets.all(4.0), child: _keyBox(num.toString(), 0, () => controller.onKeyPress(num.toString()))))).toList(),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: controller.countdownNumbers.skip(3).take(3).map((num) => Expanded(child: Padding(padding: const EdgeInsets.all(4.0), child: _keyBox(num.toString(), 0, () => controller.onKeyPress(num.toString()))))).toList(),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: controller.countdownNumbers.take(3).map((n) => Expanded(child: Padding(padding: const EdgeInsets.all(4.0), child: _keyBox(n.toString(), 0, () => controller.onKeyPress(n.toString()))))).toList(),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: controller.countdownNumbers.skip(3).take(3).map((n) => Expanded(child: Padding(padding: const EdgeInsets.all(4.0), child: _keyBox(n.toString(), 0, () => controller.onKeyPress(n.toString()))))).toList(),
+          ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: "+-*/()".split('').map((char) => Expanded(child: Padding(padding: const EdgeInsets.all(2.0), child: _keyBox(char, 0, () => controller.onKeyPress(char))))).toList(),
@@ -372,7 +372,7 @@ class CountdownSelectionScreen extends StatelessWidget {
               return ElevatedButton(
                 onPressed: () => controller.startCountdown(index),
                 style: ElevatedButton.styleFrom(shape: const CircleBorder(), padding: const EdgeInsets.all(16)),
-                child: Text(index.toString(), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.black)),
+                child: Text(index.toString(), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),
               );
             }),
           ),
@@ -390,18 +390,18 @@ class CountdownGameHeader extends StatelessWidget {
     final controller = context.watch<NortleController>();
     return Column(
       children: [
-        Text(controller.mathTarget.toString(), style: TextStyle(fontSize: 48, fontWeight: FontWeight.black, color: Theme.of(context).primaryColor)),
+        Text(controller.mathTarget.toString(), style: TextStyle(fontSize: 48, fontWeight: FontWeight.w900, color: Theme.of(context).primaryColor)),
         const Text("TARGET", style: TextStyle(color: Colors.grey, letterSpacing: 2)),
         const SizedBox(height: 16),
         const Text("YOUR NUMBERS", style: TextStyle(fontWeight: FontWeight.bold)),
         const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: controller.countdownNumbers.map((num) => Container(
+          children: controller.countdownNumbers.map((n) => Container(
             margin: const EdgeInsets.symmetric(horizontal: 4),
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
             decoration: BoxDecoration(color: Colors.green.shade50, borderRadius: BorderRadius.circular(8)),
-            child: Text(num.toString(), style: const TextStyle(fontWeight: FontWeight.black)),
+            child: Text(n.toString(), style: const TextStyle(fontWeight: FontWeight.w900)),
           )).toList(),
         ),
       ],
