@@ -4,6 +4,7 @@ workflows:
 
     environment:
       flutter: stable
+      xcode: latest
 
     scripts:
       - flutter pub get
@@ -15,8 +16,8 @@ workflows:
     publishing:
       app_store_connect:
         api_key:
-          key_id: "G59GJLFWQV"
-          issuer_id: "04e4a949-d4fe-4445-a405-6a4085d5a1b4"
+          key_id: G59GJLFWQV
+          issuer_id: 04e4a949-d4fe-4445-a405-6a4085d5a1b4
           private_key: |
             -----BEGIN PRIVATE KEY-----
             MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgAdvcIUjgcb4r3S0N
@@ -24,5 +25,6 @@ workflows:
             LQ5BJA+o6F5k78WI301xyMutX73qTt6uwLyL2+hTsvLhRz6dVCqUngPq3KJvBoXK
             BzIJlfBq
             -----END PRIVATE KEY-----
+
   
 
