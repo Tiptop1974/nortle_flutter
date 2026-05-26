@@ -1,16 +1,11 @@
 workflows:
-  ios-workflow:
-    name: iOS Workflow
-    instance_type: mac_mini_m1
+  default:
+    name: iOS debug build (no signing)
+
     environment:
       flutter: stable
 
     scripts:
-      - name: Get packages
-        script: flutter pub get
+      - flutter pub get
+      - flutter build ios --debug --no-codesigngit add codemagic.yaml
 
-      - name: Build iOS (Flutter)
-        script: flutter build ios --debug --no-codesign
-
-    artifacts:
-      - build/ios/ipa/*.ipa
