@@ -5,7 +5,6 @@ workflows:
     environment:
       flutter: stable
 
-  scripts:
-    - flutter pub get
+  scrip
     - flutter build ios --debug --no-codesign
 
