@@ -5,6 +5,9 @@ workflows:
     environment:
       flutter: stable
 
+    integrations:
+      app_store_connect: your_app_store_connect_integration_name
+
     scripts:
       - flutter pub get
       - flutter build ios --release
