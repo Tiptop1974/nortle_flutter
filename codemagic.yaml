@@ -1,10 +1,17 @@
 workflows:
   default:
-    name: iOS simulator build
+    name: iOS Release Build
 
     environment:
       flutter: stable
 
     scripts:
       - flutter pub get
-      - flutter build ios --debug --simulator
+      - flutter build ios --release
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+
+    publishing:
+      app_store_connect:
+        auth: api_key
