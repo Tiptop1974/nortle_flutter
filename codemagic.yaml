@@ -1,11 +1,10 @@
 workflows:
   default:
-    name: iOS debug no signing
+    name: iOS simulator build
 
     environment:
       flutter: stable
 
     scripts:
       - flutter pub get
-      - flutter build ios --debug --no-codesign
-
+      - flutter build ios --debug --simulator
