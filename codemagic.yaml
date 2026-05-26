@@ -15,4 +15,3 @@ workflows:
     publishing:
       app_store_connect:
         auth: api_key
-  ``
