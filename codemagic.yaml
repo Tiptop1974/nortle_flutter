@@ -14,15 +14,6 @@ workflows:
 
     publishing:
       app_store_connect:
-        api_key:
-          key_id: "G59GJLFWQV"
-          issuer_id: "04e4a949-d4fe-4445-a405-6a4085d5a1b4"
-          private_key: |
-            -----BEGIN PRIVATE KEY-----
-            MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgAdvcIUjgcb4r3S0N
-            ynhbh0cWAJnaCWQ19xgQipq9FqOgCgYIKoZIzj0DAQehRANCAASZoxIfgMXQ2L16
-            LQ5BJA+o6F5k78WI301xyMutX73qTt6uwLyL2+hTsvLhRz6dVCqUngPq3KJvBoXK
-            BzIJlfBq
-
+        auth: integration
 
 
