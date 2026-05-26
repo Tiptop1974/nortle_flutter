@@ -5,18 +5,10 @@ workflows:
     environment:
       flutter: stable
 
-    integrations:
-      app_store_connect: appstoreconnect
-
     scripts:
       - flutter pub get
       - flutter build ipa --release
 
     artifacts:
       - build/ios/ipa/*.ipa
-
-    publishing:
-      app_store_connect:
-        auth: integration
-  
 
